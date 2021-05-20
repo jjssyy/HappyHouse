@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.house.model.mapper.GugunMapper">
+<select id="getListInfo" parameterType="string" resultType="InfoDto">
+select * from houseinfo
+where dong=#{dong}
+</select>
+
+<select id="getInfo" parameterType="int" resultType="InfoDto">
+select * from houseinfo
+where no=#{no}
+</select>
+</mapper>
