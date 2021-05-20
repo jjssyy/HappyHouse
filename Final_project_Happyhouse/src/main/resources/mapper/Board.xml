@@ -29,4 +29,5 @@
 	delete from board
 	where no = #{no}
 </delete>
+
 </mapper>
