@@ -1,6 +1,6 @@
 package com.ssafy.house.model;
 
-public class Board_commentDto {
+public class BoardCommentDto {
 	private int no;
 	private int post_no;
 	private String name;
