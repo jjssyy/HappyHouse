@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybaatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.house.model.mapper.BoardCommentMapper">
+<select id="CommentList" parameterType="Integer" resultType="BoardCommentDto">
+	select no, name, content
+	from board_comment
+	where post_no = #{post_no}
+</select>
+
+<insert id="writeComment" parameterType="BoardCommentDto">
+	insert into board_comment values(#{no}, #{post_no}, #{name}, #{content})
+</insert>
+
+<update id="modifyComment" parameterType="BoardCommentDto">
+	update board_comment
+	set content = #{content}
+	where no = #{no}
+</update>
+
+<delete id="deleteComment">
+	delete from board_comment
+	where no = #{no}
+</delete>
+
+<select id="CommentCount" parameterType="Integer" resultType="Integer">
+	select count(*)
+	from board_comment
+	where post_no = #{post_no}
+</select>
+
+</mapper>
