@@ -9,5 +9,5 @@ public interface NoticeBoardMapper {
 	public NoticeBoardDto getNotice(int no);
 	public int writeNotice(NoticeBoardDto noticeBoardDto);
 	public int modifyNotice(NoticeBoardDto noticeBoardDto);
-	public int delete(int no);
+	public int deleteNotice(int no);
 }
