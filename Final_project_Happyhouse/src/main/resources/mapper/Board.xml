@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybaatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.house.model.mapper.BoardMapper">
+        
+<select id="postList" resultType="BoardDto">
+	select no, name, title, content
+	from board
+</select>
+
+<select id="getPost" parameterType="Integer" resultType="BoardDto">
+	select no, name, title, content
+	from board
+	where no = #{no}
+</select>
+
+<select id="writePost" parameterType="BoardDto">
+	insert into board values(#{no}, #{name}, #{title}, #{content})
+</select>
+
+<select id="modifyPost" parameterType="BoardDto">
+	update board 
+	set title = #{title}, content = #{content}
+	where no = #{no}
+</select>
+
+<select id="deletePost" parameterType="Integer">
+	delete from board
+	where no = #{no}
+</select>
+</mapper>
