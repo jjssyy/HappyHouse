@@ -2,8 +2,8 @@ package com.ssafy.house.model;
 
 public class BoardDto {
 	private int no;
-	private int post_no;
 	private String name;
+	private String title;
 	private String content;
 	
 	public int getNo() {
@@ -12,17 +12,17 @@ public class BoardDto {
 	public void setNo(int no) {
 		this.no = no;
 	}
-	public int getPost_no() {
-		return post_no;
-	}
-	public void setPost_no(int post_no) {
-		this.post_no = post_no;
-	}
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
 	}
 	public String getContent() {
 		return content;
