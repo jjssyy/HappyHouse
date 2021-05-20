@@ -9,5 +9,5 @@ public interface NoticeBoardService {
 	NoticeBoardDto getNotice(int no);
 	int writeNotice(NoticeBoardDto noticeBoardDto);
 	int modifyNotice(NoticeBoardDto noticeBoardDto);
-	int delete(int no);
+	int deleteNotice(int no);
 }
