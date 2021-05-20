@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.ssafy.house.model.NoticeBoardDto;
 
-public interface NoticeMapper {
+public interface NoticeBoardMapper {
 	public List<NoticeBoardDto> noticeList();
 	public NoticeBoardDto getNotice(int no);
 	public int writeNotice(NoticeBoardDto noticeBoardDto);
