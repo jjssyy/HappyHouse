@@ -15,18 +15,18 @@
 	where no = #{no}
 </select>
 
-<select id="writePost" parameterType="BoardDto">
+<insert id="writePost" parameterType="BoardDto">
 	insert into board values(#{no}, #{name}, #{title}, #{content})
-</select>
+</insert>
 
-<select id="modifyPost" parameterType="BoardDto">
+<update id="modifyPost" parameterType="BoardDto">
 	update board 
 	set title = #{title}, content = #{content}
 	where no = #{no}
-</select>
+</update>
 
-<select id="deletePost" parameterType="Integer">
+<delete id="deletePost" parameterType="Integer">
 	delete from board
 	where no = #{no}
-</select>
+</delete>
 </mapper>
