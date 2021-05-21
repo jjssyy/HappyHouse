@@ -9,7 +9,6 @@ public class DongDto {
 	String dong;
 	String lat;
 	String lng;
-	
 	public int getNo() {
 		return no;
 	}
@@ -68,4 +67,5 @@ public class DongDto {
 		lat+"/"+
 		lng;
 	}
+	
 }

@@ -5,7 +5,7 @@ import java.util.List;
 import com.ssafy.house.model.DongDto;
 
 public interface DongService {
-	public List<DongDto> getListDong(String gungu);
+	public List<DongDto> getListDong(String gugun);
 	public DongDto getDong(int no);
 	
 }

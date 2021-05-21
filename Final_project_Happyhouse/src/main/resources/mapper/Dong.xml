@@ -6,12 +6,11 @@
 <mapper namespace="com.ssafy.house.model.mapper.DongMapper">
 <select id="getListDong" parameterType="string" resultType="DongDto">
 select * from baseaddress
-where code like #{gungu}
+where dongcode like  concat(${gugun},'%')
 </select>
 
 <select id="getDong" parameterType="int" resultType="DongDto">
-select * from baseaddress
-where no = #{no}
+select * from dongcode
+where no = ${no}
 </select>
-
 </mapper>
