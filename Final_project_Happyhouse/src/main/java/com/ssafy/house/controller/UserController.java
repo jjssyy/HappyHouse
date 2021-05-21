@@ -89,4 +89,21 @@ public class UserController {
 		return new ResponseEntity<String>("Fail",HttpStatus.NO_CONTENT);
 	}
 	
+	@PutMapping("info/{userid}")
+	public ResponseEntity<String> userModify(@RequestBody UserDto userDto){
+		if(userService.userModify(userDto)==1) {
+			return new ResponseEntity<String>("success",HttpStatus.OK);
+		}
+		return new ResponseEntity<String>("Fail",HttpStatus.NO_CONTENT);
+	}
+	
+	//토큰 삭제 구현해야함
+	@DeleteMapping("info/{userid}")
+	public ResponseEntity<String> userDelete(@PathVariable String userid){
+		if(userService.userDelete(userid)==1) {
+			return new ResponseEntity<String>("success",HttpStatus.OK);
+		}
+		return new ResponseEntity<String>("Fail",HttpStatus.NO_CONTENT);
+	}
+	//로그아웃
 }
