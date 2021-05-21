@@ -3,13 +3,12 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.ssafy.house.model.mapper.GugunMapper">
-<select id="getListInfo" parameterType="string" resultType="InfoDto">
-select * from houseinfo
-where dong=#{dong}
+<select id="getListGugun" parameterType="string" resultType="gugunDto">
+select * from guguncode
+where gugun_code like "${sido}%"
 </select>
-
-<select id="getInfo" parameterType="int" resultType="InfoDto">
-select * from houseinfo
-where no=#{no}
+<select id="getGugun" parameterType="int" resultType="gugunDto">
+select * from guguncode
+where no =${no}
 </select>
 </mapper>
