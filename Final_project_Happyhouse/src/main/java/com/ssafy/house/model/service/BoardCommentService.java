@@ -5,7 +5,7 @@ import java.util.List;
 import com.ssafy.house.model.BoardCommentDto;
 
 public interface BoardCommentService {
-	List<BoardCommentDto> CommentList(int post_no);
+	List<BoardCommentDto> commentList(int post_no);
 	int writeComment(BoardCommentDto boardCommentDto);
 	int modifyComment(BoardCommentDto boardCommentDto);
 	int deleteComment(int no);

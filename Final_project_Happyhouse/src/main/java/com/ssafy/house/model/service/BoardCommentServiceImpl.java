@@ -18,7 +18,7 @@ public class BoardCommentServiceImpl implements BoardCommentService {
 	private BoardCommentMapper boardCommentMapper;
 	
 	@Override
-	public List<BoardCommentDto> CommentList(int post_no) {
+	public List<BoardCommentDto> commentList(int post_no) {
 		return boardCommentMapper.CommentList(post_no);
 	}
 
