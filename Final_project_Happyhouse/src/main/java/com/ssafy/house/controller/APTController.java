@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -40,6 +41,10 @@ public class APTController {
 		System.out.println(map.get("value"));
 		return deal.getListDeal(map);
 	}
+	
+	@GetMapping(value="/donginfo", headers={ "Content-type=application/json" })
+	public 
+	
 	
 	@RequestMapping(value = "/sido", method = RequestMethod.POST, headers = { "Content-type=application/json" })
 	public List<SidoDto> SidoList() {

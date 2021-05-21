@@ -16,9 +16,9 @@ public class DongServiceImpl implements DongService {
 	private SqlSession sqlSession;
 	
 	@Override
-	public List<DongDto> getListDong(String gungu) {
+	public List<DongDto> getListDong(String gugun) {
 		// TODO Auto-generated method stub
-		return sqlSession.getMapper(DongMapper.class).getListDong(gungu);
+		return sqlSession.getMapper(DongMapper.class).getListDong(gugun);
 	}
 
 	@Override
@@ -26,4 +26,5 @@ public class DongServiceImpl implements DongService {
 		// TODO Auto-generated method stub
 		return sqlSession.getMapper(DongMapper.class).getDong(no);
 	}
+
 }
