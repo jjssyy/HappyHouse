@@ -33,6 +33,7 @@ public class NoticeController {
 	
 	@GetMapping("/{no}")
 	public NoticeBoardDto getNotice(@PathVariable int no) {
+		System.out.println("들어오는지 확인");
 		return noticeBoardService.getNotice(no);
 	}
 	
