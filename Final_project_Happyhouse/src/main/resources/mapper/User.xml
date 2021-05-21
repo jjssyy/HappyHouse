@@ -27,7 +27,7 @@
 	where userid = #{userid}
 </update>
 
-<delete id="userDelete" parameterType="Integer" >
+<delete id="userDelete" parameterType="String" >
 	delete from user
 	where userid = #{userid}
 </delete>
