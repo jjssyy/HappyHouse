@@ -44,7 +44,6 @@ public class APTController {
 	
 	@RequestMapping(value = "/list", method = RequestMethod.POST, headers = { "Content-type=application/json" })
 	public List<DealDto> DealList(@RequestBody Map<String,String> map) {
-		System.out.println(map.get("value"));
 		return deal.getListDeal(map);
 	}
 	
@@ -56,9 +55,10 @@ public class APTController {
 //		return dong.getDong(code);
 //	}
 	
-	@PostMapping(value="/houseinfo", headers = { "Content-type=application/json" })
+	@PostMapping(value="/houseinfo")
 	public List<HouseinfoDto> houseinfolist(@RequestBody Map<String,String> map){
-		String dongname=map.get("dongname");
+//		String dongname=map.get("dongname");
+//		System.out.println(map);
 		return house.HouseinfoList(map);
 	}
 	
@@ -91,7 +91,6 @@ public class APTController {
 	public List<DongDto> dongList(@RequestBody Map<String,String> map) {
 		String gugun=map.get("gugun_code");
 		gugun=gugun.substring(0,5);
-		System.out.println(gugun);
 		return dong.getListDong(gugun);
 	}
 	
