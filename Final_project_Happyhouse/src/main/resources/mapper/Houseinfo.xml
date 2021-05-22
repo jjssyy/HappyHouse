@@ -5,7 +5,7 @@
 
 <mapper namespace="com.ssafy.house.model.mapper.HouseinfoMapper">
 <select id="HouseinfoList" parameterType="string" resultType="HouseinfoDto">
-select * from houseinfo where dong = "${dongname}"
+select * from houseinfo where ${key} like "%${dongname}%"
 </select>
 
 
