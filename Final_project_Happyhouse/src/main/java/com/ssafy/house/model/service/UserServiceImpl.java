@@ -1,5 +1,7 @@
 package com.ssafy.house.model.service;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,10 +15,10 @@ public class UserServiceImpl implements UserService {
 	private UserMapper userMapper;
 	
 	@Override
-	public UserDto login(UserDto userDto) {
-		if(userDto.getUserid()== null || userDto.getUserpwd()==null)
+	public UserDto login(Map<String, String> map) {
+		if(map.get("userid") == null || map.get("userpwd") == null)
 			return null;
-		return userMapper.login(userDto);
+		return userMapper.login(map);
 	}
 
 	@Override
