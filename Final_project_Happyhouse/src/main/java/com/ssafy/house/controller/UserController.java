@@ -32,12 +32,8 @@ public class UserController {
 	}
 	
 	@GetMapping("/info/{userid}")
-	public ResponseEntity<String> userInfo(@PathVariable("userid") String userid) {
-		UserDto user = userService.userInfo(userid);
-		if(user != null) {
-			return new ResponseEntity<String>("success",HttpStatus.OK);
-		}
-		return new ResponseEntity<String>("Fail",HttpStatus.NO_CONTENT);
+	public UserDto userInfo(@PathVariable("userid") String userid) {
+		return userService.userInfo(userid);
 	}
 	                                                                                                                              
 	@PostMapping("/register")
