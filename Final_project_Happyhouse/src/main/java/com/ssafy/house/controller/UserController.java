@@ -18,7 +18,6 @@ import com.ssafy.house.model.service.UserService;
 public class UserController {
 	public static final Logger logger = LoggerFactory.getLogger(UserController.class);
 	
-	
 	@Autowired
 	private UserService userService;
 	
