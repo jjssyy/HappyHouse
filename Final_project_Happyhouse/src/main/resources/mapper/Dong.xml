@@ -9,8 +9,8 @@ select * from baseaddress
 where dongcode like  concat(${gugun},'%')
 </select>
 
-<select id="getDong" parameterType="int" resultType="DongDto">
-select * from dongcode
-where no = ${no}
+<select id="getDong" parameterType="string" resultType="DongDto">
+select * from baseaddress
+where code = ${code}
 </select>
 </mapper>

@@ -22,9 +22,9 @@ public class DongServiceImpl implements DongService {
 	}
 
 	@Override
-	public DongDto getDong(int no) {
+	public DongDto getDong(String code) {
 		// TODO Auto-generated method stub
-		return sqlSession.getMapper(DongMapper.class).getDong(no);
+		return sqlSession.getMapper(DongMapper.class).getDong(code);
 	}
 
 }

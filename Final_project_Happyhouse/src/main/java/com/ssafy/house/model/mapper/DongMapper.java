@@ -6,7 +6,7 @@ import com.ssafy.house.model.DongDto;
 
 public interface DongMapper {
 	public List<DongDto> getListDong(String gugun);
-	public DongDto getDong(int no);
+	public DongDto getDong(String code);
 	
 
 }

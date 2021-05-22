@@ -6,18 +6,17 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ssafy.house.model.BaseaddressDto;
 import com.ssafy.house.model.DealDto;
 import com.ssafy.house.model.DongDto;
 import com.ssafy.house.model.GugunDto;
 import com.ssafy.house.model.HouseinfoDto;
 import com.ssafy.house.model.SidoDto;
-import com.ssafy.house.model.service.BaseaddressService;
 import com.ssafy.house.model.service.DealService;
 import com.ssafy.house.model.service.DongService;
 import com.ssafy.house.model.service.GugunService;
@@ -41,9 +40,6 @@ public class APTController {
 	public DongService dong;
 	
 	@Autowired
-	public BaseaddressService base;
-	
-	@Autowired
 	public HouseinfoService house;
 	
 	@RequestMapping(value = "/list", method = RequestMethod.POST, headers = { "Content-type=application/json" })
@@ -52,17 +48,18 @@ public class APTController {
 		return deal.getListDeal(map);
 	}
 	
-	@GetMapping(value="/donginfo", headers = { "Content-type=application/json" })
-	public BaseaddressDto donginfo(@RequestBody Map<String,String> map) {
-		System.out.println("========시작========");
-		String code=map.get("code");
-		return base.getBaseaddress(code);
-	}
+//	@PostMapping(value="/donginfo", headers = { "Content-type=application/json" })
+//	public DongDto donginfo(@RequestBody Map<String,String> map) {
+//		System.out.println("=================시작==================");
+//		String code=map.get("code");
+//		System.out.println(code);
+//		return dong.getDong(code);
+//	}
 	
-	@GetMapping(value="/houseinfo", headers = { "Content-type=application/json" })
+	@PostMapping(value="/houseinfo", headers = { "Content-type=application/json" })
 	public List<HouseinfoDto> houseinfolist(@RequestBody Map<String,String> map){
-		String code=map.get("code");
-		return house.HouseinfoList(code);
+		String dongname=map.get("dongname");
+		return house.HouseinfoList(dongname);
 	}
 	
 	@RequestMapping(value = "/sido", method = RequestMethod.POST, headers = { "Content-type=application/json" })
