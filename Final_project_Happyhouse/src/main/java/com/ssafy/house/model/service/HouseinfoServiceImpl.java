@@ -1,6 +1,7 @@
 package com.ssafy.house.model.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +16,9 @@ public class HouseinfoServiceImpl implements HouseinfoService {
 	private SqlSession sqlSession;
 
 	@Override
-	public List<HouseinfoDto> HouseinfoList(String code) {
+	public List<HouseinfoDto> HouseinfoList(Map<String, String> map) {
 		// TODO Auto-generated method stub
-		return sqlSession.getMapper(HouseinfoMapper.class).HouseinfoList(code);
+		return sqlSession.getMapper(HouseinfoMapper.class).HouseinfoList(map);
 	}
 
 }

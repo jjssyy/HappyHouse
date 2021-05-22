@@ -59,7 +59,7 @@ public class APTController {
 	@PostMapping(value="/houseinfo", headers = { "Content-type=application/json" })
 	public List<HouseinfoDto> houseinfolist(@RequestBody Map<String,String> map){
 		String dongname=map.get("dongname");
-		return house.HouseinfoList(dongname);
+		return house.HouseinfoList(map);
 	}
 	
 	@RequestMapping(value = "/sido", method = RequestMethod.POST, headers = { "Content-type=application/json" })
