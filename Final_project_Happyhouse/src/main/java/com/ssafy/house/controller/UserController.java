@@ -22,7 +22,8 @@ public class UserController {
 	private UserService userService;
 	
 	@PostMapping("/login")
-	public ResponseEntity<String> login(@RequestParam Map<String, String> map) {
+	public ResponseEntity<String> login(@RequestBody Map<String, String> map) {
+		System.out.println("로그인");
 		UserDto user = userService.login(map);
 		if(user != null) {
 			return new ResponseEntity<String>("success",HttpStatus.OK);
