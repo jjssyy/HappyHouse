@@ -5,25 +5,25 @@
 <mapper namespace="com.ssafy.house.model.mapper.UserMapper">
 
 <select id="login" parameterType="UserDto" resultType="UserDto">
-	select userid, username, email, interest_sido, interest_gugun, interest_dong
+	select userid, username, email
 	from user
 	where userid = #{userid} and userpwd = #{userpwd}
 </select>
 
 <select id="userInfo" parameterType="String" resultType="UserDto">
-	select userid, userpwd, username, email, interest_sido, interest_gugun, interest_dong
+	select userid, userpwd, username, email
 	from user
 	where userid = #{userid}
 </select>
 
 <insert id="userRegister" parameterType="UserDto">
 	insert into user 
-	values(#{userid}, #{userpwd}, #{username}, #{email}, #{interest_sido}, #{interest_gugun}, #{interest_dong})
+	values(#{userid}, #{userpwd}, #{username}, #{email})
 </insert>
 
 <update id="userModify" parameterType="UserDto">
 	update user
-	set userpwd = #{userpwd}, username = #{username}, email = #{email}, interest_sido = #{interest_sido}, interest_gugun = #{interest_gugun}, interest_dong = #{interest_dong}
+	set userpwd = #{userpwd}, username = #{username}, email = #{email}
 	where userid = #{userid}
 </update>
 
