@@ -33,7 +33,7 @@ public class UserController {
 	
 	@GetMapping("/info/{userid}")
 	public UserDto userInfo(@PathVariable("userid") String userid) {
-		System.out.println("여기로왔따유저용");
+		System.out.println("회원정보 확인");
 		return userService.userInfo(userid);
 	}
 	                                                                                                                              
@@ -55,6 +55,7 @@ public class UserController {
 	
 	@DeleteMapping("info/{userid}")
 	public ResponseEntity<String> userDelete(@PathVariable String userid){
+		System.out.println("회원 삭제");
 		if(userService.userDelete(userid)==1) {
 			return new ResponseEntity<String>("success",HttpStatus.OK);
 		}
