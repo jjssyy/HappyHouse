@@ -7,5 +7,5 @@ import com.ssafy.house.model.GugunDto;
 public interface GugunMapper {
 
 	public List<GugunDto> getListGugun(String sido);
-	public GugunDto getGugun(int no);
+	public GugunDto getGugun(String gu);
 }

@@ -33,6 +33,7 @@ public class UserController {
 	
 	@GetMapping("/info/{userid}")
 	public UserDto userInfo(@PathVariable("userid") String userid) {
+		System.out.println("여기로왔따유저용");
 		return userService.userInfo(userid);
 	}
 	                                                                                                                              

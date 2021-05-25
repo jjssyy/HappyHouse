@@ -7,8 +7,8 @@
 select * from guguncode
 where gugun_code like "${sido}%"
 </select>
-<select id="getGugun" parameterType="int" resultType="gugunDto">
+<select id="getGugun" parameterType="string" resultType="gugunDto">
 select * from guguncode
-where no =${no}
+where gugun_name ="${gu}"
 </select>
 </mapper>

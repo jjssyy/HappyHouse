@@ -7,4 +7,5 @@ import com.ssafy.house.model.HouseinfoDto;
 
 public interface HouseinfoMapper {
 	public List<HouseinfoDto> HouseinfoList(Map<String, String> map); 
+	public List<HouseinfoDto> AllHouseinfoList(String code);
 }

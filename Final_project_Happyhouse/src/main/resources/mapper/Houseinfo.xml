@@ -8,5 +8,9 @@
 select * from houseinfo where ${key} like "%${dongname}%"
 </select>
 
+<select id="AllHouseinfoList" parameterType="string" resultType="HouseinfoDto">
+select * from houseinfo where code like "%${code}%"
+</select>
+
 
 </mapper>

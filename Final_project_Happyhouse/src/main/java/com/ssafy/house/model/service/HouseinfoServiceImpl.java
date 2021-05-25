@@ -21,4 +21,10 @@ public class HouseinfoServiceImpl implements HouseinfoService {
 		return sqlSession.getMapper(HouseinfoMapper.class).HouseinfoList(map);
 	}
 
+	@Override
+	public List<HouseinfoDto> AllHouseinfoList(String code) {
+		// TODO Auto-generated method stub
+		return sqlSession.getMapper(HouseinfoMapper.class).AllHouseinfoList(code);
+	}
+
 }

@@ -62,6 +62,13 @@ public class APTController {
 		return house.HouseinfoList(map);
 	}
 	
+	@PostMapping(value="/allhouseinfo")
+	public List<HouseinfoDto> Allhouseinfolist(@RequestBody Map<String,String> map){
+		String code=map.get("gugun_code");
+		code=code.substring(0,5);
+		return house.AllHouseinfoList(code);
+	}
+	
 	@RequestMapping(value = "/sido", method = RequestMethod.POST, headers = { "Content-type=application/json" })
 	public List<SidoDto> SidoList() {
 		return sido.get_sidocode();
@@ -72,6 +79,12 @@ public class APTController {
 		System.out.println(sido);
 		sido=sido.substring(0,2);
 		return gugun.getListGugun(sido);
+	}
+	
+	@RequestMapping(value = "/getgugun", method = RequestMethod.POST, headers = { "Content-type=application/json" })
+	public GugunDto getGugun(@RequestBody Map<String,String> map) {
+		String gu=map.get("gugun");
+		return gugun.getGugun(gu);
 	}
 	
 	//test

@@ -32,6 +32,7 @@ public class BoardController {
 	
 	@GetMapping("/{no}")
 	public BoardDto getPost(@PathVariable int no) {
+		System.out.println("여기로왔따");
 		return boardService.getPost(no);
 	}
 	

@@ -21,8 +21,8 @@ public class GugunServiceImpl implements GugunService {
 	}
 
 	@Override
-	public GugunDto getGugun(int no) {
+	public GugunDto getGugun(String gu) {
 		// TODO Auto-generated method stub
-		return sqlSession.getMapper(GugunMapper.class).getGugun(no);
+		return sqlSession.getMapper(GugunMapper.class).getGugun(gu);
 	}
 }
